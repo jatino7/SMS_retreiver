@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:padding="24dp"
+        tools:context=".UI.LoginActivity">
+
+        <!-- Title -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            android:text="Login"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@android:color/black"
+            app:hintTextColor="@android:color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@android:color/black"
+            app:hintTextColor="@android:color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Action Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="12dp"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/white"/>
+
+        <!-- Toggle Text -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvToggle"
+            android:text="Don’t have an account? Sign up"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
