@@ -12,6 +12,21 @@
         app:cardElevation="4dp"
         app:cardBackgroundColor="@color/white"
         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/img"
+                />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="user@email.com"
                 android:textSize="14sp" />
+        </LinearLayout>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

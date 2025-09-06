@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun fetchUsers() {
-        userList.clear()
+
 
         db.collection("user").addSnapshotListener { value,error->
 
@@ -75,6 +75,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             if(value != null) {
+
+                userList.clear()
                 for(i in value) {
                     val user = i.toObject(User::class.java)
                     userList.add(user)

@@ -60,4 +60,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("com.google.android.material:material:1.9.0")
+
+//    lottie
+    implementation("com.airbnb.android:lottie:6.3.0")
 }

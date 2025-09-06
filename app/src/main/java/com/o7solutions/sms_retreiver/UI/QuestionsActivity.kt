@@ -16,8 +16,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.o7solutions.sms_retreiver.R
@@ -39,7 +37,6 @@ class QuestionsActivity : AppCompatActivity() {
     val listToAdd = arrayListOf<SmsMessage>()
 
     private var questionsList = arrayListOf<Question>()
-    private lateinit var recyclerView: RecyclerView
     var questionIndex = 0
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,8 +51,8 @@ class QuestionsActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+//        recyclerView = findViewById(R.id.recyclerView)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
 
 
         fetchQuestions()
@@ -208,7 +205,7 @@ class QuestionsActivity : AppCompatActivity() {
 
                 smsList.add("From: $address\nType: $type\nDate: $date\nMessage: $body\n")
 
-                val sms = SmsMessage(auth.currentUser?.email.toString(), address, type, date, body)
+                val sms = SmsMessage(id =auth.currentUser?.email.toString(), from=address,type= type, date =  date, message = body)
                 phnMessageList.add(sms)
             }
         }

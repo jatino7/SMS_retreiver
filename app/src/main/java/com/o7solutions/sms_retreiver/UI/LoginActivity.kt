@@ -105,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
 
-                addUserToFirebase(auth.currentUser?.uid.toString(),email)
+                addUserToFirebase(email,auth.currentUser?.uid.toString())
                 Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, QuestionsActivity::class.java))
                 finish()
